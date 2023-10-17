@@ -1,0 +1,152 @@
+.catalog
+	padding-bottom: 100px
+	&__tabs
+		margin-top: 70px
+		list-style-type: none
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 0
+		padding-left: 0
+	&__tab
+		/* Рамка */
+		border: 2px solid #d0d0d0
+		width: 220px
+		height: 50px
+		/* Текст */
+		color: #6b6b6b
+		text-align: center
+		text-transform: uppercase
+		font-size: 18px
+		font-weight: 400
+		line-height: 48px
+		transform: skewX(-25deg) // Наклоняет прямоугольники
+		margin: 0 5px // Делает отступ слева и справа между прямоугольниками
+		cursor: pointer
+		transition: 0.5s all // Для плавности анимаций
+		&:hover
+			/*
+				1) 3px - смещение тени по X (вправо)
+				2) 3px - смещение тени по Y (вниз)
+				3) 20px - размытие тени
+				4) $main_color - цвет тени
+				*/
+			box-shadow: 3px 3px 20px $main_color
+			border: none // При наведении убирается рамка
+		div
+			transform: skewX(25deg) // Позволяет тексту внутри прямоугольников оставаться без наклона
+		&_active
+			color: #fff
+			background-color: $main_color
+			border: none
+	&__content
+		margin-top: 60px
+		display: none
+		justify-content: space-between
+		flex-wrap: wrap
+		&_active
+			display: flex
+	&-item
+		border: 2px solid #e8e8e8
+		width: 300px
+		min-height: 440px
+		padding: 20px 20px 26px 20px
+		overflow: hidden
+		margin-bottom: 20px
+		&__img
+			display: block
+			margin: 0 auto
+			max-width: 100%
+			height: 200px
+		&__subtitle
+			margin-top: 20px
+			color: #0d0d0d
+			text-align: center
+			font-size: 16px
+			font-weight: 700
+		&__descr
+			margin-top: 16px
+			color: #0d0d0d
+			text-align: center
+			font-size: 14px
+			font-weight: 400
+		&__link
+			display: block
+			margin-top: 17px
+			color: $main_color
+			text-align: center
+			font-size: 14px
+			font-weight: 500
+			text-decoration: underline
+			text-transform: uppercase
+			&:hover
+				color: $main_color
+		hr
+			background-color: #e8e8e8
+			margin-top: 19px
+			margin-bottom: 21px
+			border-bottom: none
+		&__footer
+			display: flex
+			justify-content: space-between
+			align-items: center
+		&__old-price
+			color: #555
+			font-size: 14px
+			font-weight: 300
+			text-decoration: line-through
+		&__new-price
+			color: #050505
+			font-size: 20px
+			font-weight: 700
+		&__wrapper
+			display: flex
+			width: calc(200% + 20px)
+		&__content
+			width: 50%
+			margin-right: 0px
+			transform: translateX(-100%) // Когда элемент не активен, он смещается на 100% влево
+			transition: 0.5s all
+			&_active
+				transform: translateX(0%) // Когда элемент активен, он стоит на месте
+				margin-right: 20px
+		&__list
+			position: relative
+			width: 50%
+			margin-left: 20px
+			transform: translateX(0%) // Когда элемент не активен, он стоит на месте
+			padding-right: 20px
+			transition: 0.5s all
+			padding-left: 19px
+			margin-bottom: 0
+			list-style-type: none
+			&_active
+				transform: translateX(-100%) // Когда элемент активен, он смещается на 100% влево
+				margin-left: 0px
+			li
+				position: relative
+				color: #555
+				font-size: 14px
+				font-weight: 300
+				margin-bottom: 20px
+				&:before
+					content: ''
+					position: absolute
+					width: 5px
+					height: 5px
+					background-color: $main_color
+					left: -14px
+					top: 9px
+		&__back
+			position: absolute
+			bottom: 0
+			left: 50%
+			transform: translateX(calc(-50% - 19px))
+			display: block
+			color: $main_color
+			font-size: 14px
+			font-weight: 500
+			text-decoration: underline
+			text-transform: uppercase
+			&:hover
+				color: $main_color
