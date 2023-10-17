@@ -1,0 +1,66 @@
+header
+	position: relative
+
+nav
+	height: 50px
+	background: #212121
+
+.hamburger
+	display: none
+
+.menu
+	display: flex
+	justify-content: space-between
+	padding: 13px 70px
+	margin: 0
+	list-style-type: none
+	&_link
+		color: #fff
+		font-size: 15px
+		font-weight: 300
+		&:hover
+			text-decoration: none
+			color: $first_color
+	&_item
+		border-right: 2px dotted black
+		padding-right: 28px
+		&:last-child
+			border-right: none
+
+.subheader
+	position: absolute
+	width: 100%
+	background-color: rgba(0, 0, 0, 0.6)
+	height: 90px
+	&_logo
+		display: block
+		max-width: 100%
+		margin-top: 16px
+	&_official
+		color: #fff
+		font-size: 13px
+		font-weight: 100
+		opacity: 0.5
+		margin-top: 6px
+	&_call
+		color: #fff
+		font-size: 12px
+		font-weight: 300
+		margin-top: 19px
+		text-align: right
+	&_phone
+		display: block
+		color: #fff
+		font-size: 22px
+		font-weight: 400
+		margin-top: 8px
+		line-height: 1
+		text-transform: uppercase
+		text-align: right
+		&:hover
+			color: $first_color
+	&_btn
+		margin-top: 19px
+
+.xs-visible
+	display: none
